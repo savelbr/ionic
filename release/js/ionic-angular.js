@@ -888,7 +888,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
         // create an element from the viewLocals template
         ele = $ionicViewSwitcher.createViewEle(viewLocals);
         if (this.isAbstractEle(ele, viewLocals)) {
-          void 0;
+          console.log('VIEW', 'abstractView', DIRECTION_NONE, viewHistory.currentView);
           return {
             action: 'abstractView',
             direction: DIRECTION_NONE,
@@ -1008,7 +1008,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
         }
       }
 
-      void 0;
+      console.log('VIEW', action, direction, viewHistory.currentView);
 
       hist.cursor = viewHistory.currentView.index;
 
@@ -3147,7 +3147,7 @@ var POPUP_TPL =
       '</div>' +
       '<div class="popup-body">' +
       '</div>' +
-      '<div class="popup-buttons" ng-show="buttons.length">' +
+      '<div class="popup-buttons" ng-show="buttons.length" data-tap-disabled="true">' +
         '<button ng-repeat="button in buttons" ng-click="$buttonTapped(button, $event)" class="button" ng-class="button.type || \'button-default\'" ng-bind-html="button.text"></button>' +
       '</div>' +
     '</div>' +
@@ -12446,7 +12446,7 @@ function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory, $ionicScroll
       };
 
       this.onPagerClick = function(index) {
-        void 0;
+        console.log('pagerClick', index);
         $scope.pagerClick({index: index});
       };
 
